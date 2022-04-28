@@ -1,0 +1,18 @@
+{
+  "type" : "record",
+  "name" : "ProductKafkaDTO",
+  "namespace" : "com.example.inbounds.kafka.dtos",
+  "fields" : [ {
+    "name" : "id",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "category",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "endOfSaleDate",
+    "type" : [ "null", "string" ]
+  } ]
+}

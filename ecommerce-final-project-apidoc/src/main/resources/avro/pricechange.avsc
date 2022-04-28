@@ -1,0 +1,18 @@
+{
+  "type" : "record",
+  "name" : "PriceChangeKafkaDTO",
+  "namespace" : "com.example.inbounds.kafka.dtos",
+  "fields" : [ {
+    "name" : "rateId",
+    "type" : [ "null", {
+      "type" : "string",
+      "java-class" : "java.lang.String"
+    } ]
+  }, {
+    "name" : "price",
+    "type" : [ "null", {
+      "type" : "string",
+      "java-class" : "java.math.BigDecimal"
+    } ]
+  } ]
+}
