@@ -60,4 +60,12 @@ class ProductDAOTest {
     verify(repository).existsById(any());
     verify(repository).deleteById(any());
   }
+
+  @Test
+  void test_exists() {
+
+    dao.exists("1");
+
+    verify(repository).existsById(any());
+  }
 }

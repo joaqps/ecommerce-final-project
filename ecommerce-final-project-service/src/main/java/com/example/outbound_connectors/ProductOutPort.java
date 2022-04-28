@@ -9,4 +9,6 @@ public interface ProductOutPort {
   Product update(Product entity);
 
   void delete(String id);
+
+  boolean exists(String id);
 }
