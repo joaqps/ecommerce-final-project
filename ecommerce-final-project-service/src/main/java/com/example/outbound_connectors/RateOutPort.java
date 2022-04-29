@@ -9,5 +9,7 @@ public interface RateOutPort {
 
   Optional<Rate> findByProductIdBrandIdAndDate(String productId, String brandId, LocalDateTime date);
 
+  boolean exists(String id);
+
   void updateRate(Rate rate);
 }

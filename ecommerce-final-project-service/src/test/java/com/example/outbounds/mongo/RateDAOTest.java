@@ -59,4 +59,12 @@ class RateDAOTest {
 
     verify(repository, never()).save(any());
   }
+
+  @Test
+  void test_exists() {
+
+    dao.exists("1");
+
+    verify(repository).existsById(any());
+  }
 }
