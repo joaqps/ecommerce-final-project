@@ -1,7 +1,7 @@
 package com.example.inbounds.rest;
 
 import com.example.domain.domain.Rate;
-import com.example.domain_connectors.RateInPort;
+import com.example.domain_connectors.RateService;
 import com.example.domain_connectors.mappers.RateResponseMapper;
 import com.example.inbounds.rest.apidoc.rates.RatesCommandApi;
 import com.example.inbounds.rest.apidoc.rates.RatesQueryApi;
@@ -22,7 +22,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class RateController implements RatesQueryApi, RatesCommandApi {
 
-  private final RateInPort inPort;
+  private final RateService inPort;
   private final RateResponseMapper responseMapper;
 
   @PostMapping("/find")

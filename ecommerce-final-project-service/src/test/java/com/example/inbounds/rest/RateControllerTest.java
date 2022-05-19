@@ -1,7 +1,7 @@
 package com.example.inbounds.rest;
 
 import com.example.domain.domain.Rate;
-import com.example.domain_connectors.RateInPort;
+import com.example.domain_connectors.RateService;
 import com.example.domain_connectors.mappers.RateResponseMapper;
 import com.example.inbounds.rest.dtos.PriceChangeRequestDTO;
 import com.example.inbounds.rest.dtos.RateQueryDTO;
@@ -23,7 +23,7 @@ import static org.mockito.Mockito.when;
 class RateControllerTest extends MockMvcTest {
 
   @Mock
-  RateInPort inPort;
+  RateService inPort;
   @Mock
   RateResponseMapper responseMapper;
 

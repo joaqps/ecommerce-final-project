@@ -1,6 +1,6 @@
 package com.example.inbounds.rest;
 
-import com.example.domain_connectors.ProductMessageInPort;
+import com.example.domain_connectors.ProductMessageService;
 import com.example.inbounds.rest.dtos.ProductRequestDTO;
 import org.greyhawk.rest.server.conventions.testutils.inbounds.rest.tests.MockMvcTest;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.mockito.Mockito.when;
 class ProductControllerTest extends MockMvcTest {
 
   @Mock
-  ProductMessageInPort inPort;
+  ProductMessageService inPort;
 
   @Override
   protected String getUriRoot() {

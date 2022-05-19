@@ -2,11 +2,15 @@ package com.example.domain_connectors;
 
 import com.example.domain.domain.Product;
 
-public interface ProductInPort {
+import java.util.List;
 
-  void save(Product vo);
+public interface ProductService {
+
+  void saveAndNotify(Product vo);
 
   void update(Product vo);
 
   void delete(String id);
+
+  List<Product> findAll();
 }

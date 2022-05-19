@@ -1,13 +1,16 @@
 package com.example.outbounds.mongo;
 
-import com.example.outbounds.mongo.entities.ProductEntity;
-import com.example.outbound_connectors.mappers.ProductEntityMapper;
-import com.example.outbounds.mongo.repository.ProductRepository;
 import com.example.domain.domain.Product;
 import com.example.outbound_connectors.ProductOutPort;
+import com.example.outbound_connectors.mappers.ProductEntityMapper;
+import com.example.outbounds.mongo.entities.ProductEntity;
+import com.example.outbounds.mongo.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -45,5 +48,10 @@ public class ProductDAO implements ProductOutPort {
   @Override
   public boolean exists(String id) {
     return repository.existsById(id);
+  }
+
+  @Override
+  public List<Product> findAll() {
+    return repository.findAll().stream().map(mapper::mapEntity).collect(Collectors.toList());
   }
 }

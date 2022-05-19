@@ -3,7 +3,7 @@ package com.example.domain.services;
 import com.example.domain.domain.Product;
 import com.example.domain.exceptions.BadRequestException;
 import com.example.domain.exceptions.ProductNotFoundException;
-import com.example.domain_connectors.ProductMessageInPort;
+import com.example.domain_connectors.ProductMessageService;
 import com.example.outbound_connectors.ProductMessageOutPort;
 import com.example.outbound_connectors.ProductOutPort;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class ProductMessageService implements ProductMessageInPort {
+public class ProductMessageServiceImpl implements ProductMessageService {
 
   private final ProductMessageOutPort outMessagePort;
   private final ProductOutPort outPort;

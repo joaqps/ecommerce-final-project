@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/ecommerce-layout}">
+
+<head>
+    <title>Products</title>
+    <script>
+            $(document).ready(function(){
+
+                $("#btnExport").click(function(){
+                  $.ajax({
+                    type: "POST",
+                    url: "/web/products/export",
+                    success: function(result) {
+                        $("#modalExport").show();
+                  }});
+                });
+
+            });
+    </script>
+</head>
+
+<body>
+
+<div layout:fragment="content">
+
+    <div id="modalExport" class="alert alert-success alert-dismissible collapse">
+        <a class="close" data-dismiss="modal" aria-label="close">&times;</a>
+        Processing products export. An email will be sent when it's ready.
+    </div>
+
+    <table class="mt-5 table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product: ${products}">
+            <th scope="row" th:text="${product.id}"></th>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.category}"></td>
+            <td></td>
+            <td><a id="btnBuy" class="btn btn-primary" href="javascript:void(0)"></a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a id="btnExport" class="btn btn-primary pull-right" href="javascript:void(0)">Export</a>
+
+</div>
+</body>
+</html>

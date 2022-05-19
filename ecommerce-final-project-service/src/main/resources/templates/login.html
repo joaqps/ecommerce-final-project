@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/login-layout}">
+
+<head>
+    <title>Login</title>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#btnLogin").click(function(){
+
+              $(this).attr("disabled", true);
+
+              $.ajax({
+                type: "POST",
+                url: "/auth/login",
+                data: { username: $("#email").val(),
+                        password: $("#password").val()
+                },
+                success: function(response) {
+
+                    $("#btnLogin").attr("disabled", false);
+
+                    if (response["successful"]) {
+                        window.location.href = "/auth/login-success";
+                    } else {
+                        showErrorAlert(response["message"]);
+                    }
+
+                    clearForm();
+                },
+                error: function(response) {
+                    showErrorAlert(response["message"]);
+                }});
+            });
+
+        });
+
+        function clearForm() {
+            $("#password").val("");
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input id="email" class="form-control" type="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password">
+            </div>
+            <button id="btnLogin" type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+    </div>
+</body>
+</html>

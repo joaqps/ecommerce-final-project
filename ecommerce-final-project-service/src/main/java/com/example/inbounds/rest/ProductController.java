@@ -1,7 +1,7 @@
 package com.example.inbounds.rest;
 
 import com.example.domain.domain.Product;
-import com.example.domain_connectors.ProductMessageInPort;
+import com.example.domain_connectors.ProductMessageService;
 import com.example.domain_connectors.mappers.ProductRequestMapper;
 import com.example.inbounds.rest.apidoc.products.ProductsCommandApi;
 import com.example.inbounds.rest.dtos.ProductRequestDTO;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ProductController implements ProductsCommandApi {
 
-  private final ProductMessageInPort inPort;
+  private final ProductMessageService inPort;
   private final ProductRequestMapper requestMapper = Mappers.getMapper(ProductRequestMapper.class);
 
   @PostMapping

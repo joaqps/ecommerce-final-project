@@ -1,0 +1,7 @@
+[
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "id": "1",
+    "name": "ZARA"
+  }
+]

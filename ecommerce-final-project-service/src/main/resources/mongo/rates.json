@@ -1,17 +1,5 @@
 [
   {
-    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
-    "id": "1",
-    "name": "ZARA"
-  },
-  {
-    "_class": "com.example.outbounds.mongo.entities.ProductEntity",
-    "id": "35455",
-    "name": "Jeans",
-    "category": "Trousers",
-    "endOfSaleDate": "2022-06-30 10:30:00"
-  },
-  {
     "_class": "com.example.outbounds.mongo.entities.RateEntity",
     "id": "1",
     "brandId": "1",

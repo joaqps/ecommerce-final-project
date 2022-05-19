@@ -24,7 +24,7 @@ class ProductServiceTest {
   @Mock
   ProductOutPort outPort;
   @InjectMocks
-  ProductService service;
+  ProductServiceImpl service;
   @Captor
   ArgumentCaptor<Product> captor;
 
@@ -33,7 +33,7 @@ class ProductServiceTest {
 
     Product vo = new Product();
 
-    service.save(vo);
+    service.saveAndNotify(vo);
 
     verify(outPort).save(captor.capture());
 

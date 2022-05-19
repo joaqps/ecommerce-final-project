@@ -1,6 +1,6 @@
 package com.example.inbounds.kafka;
 
-import com.example.domain_connectors.ProductInPort;
+import com.example.domain_connectors.ProductService;
 import com.example.domain_connectors.mappers.ProductKafkaConsumerMapper;
 import com.example.inbounds.kafka.dtos.ProductKafkaDTO;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -17,7 +17,7 @@ import static org.mockito.Mockito.verify;
 class ProductKafkaConsumerTest {
 
   @Mock
-  ProductInPort inPort;
+  ProductService inPort;
   @Mock
   ProductKafkaConsumerMapper mapper;
   @InjectMocks
@@ -29,7 +29,7 @@ class ProductKafkaConsumerTest {
     kafkaConsumer.onSave(new ConsumerRecord<>("products", 1, 1, "1", new ProductKafkaDTO()));
 
     verify(mapper).of(any());
-    verify(inPort).save(any());
+    verify(inPort).saveAndNotify(any());
   }
 
   @Test

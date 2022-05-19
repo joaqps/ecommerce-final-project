@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/login-layout}">
+
+<head>
+    <title>Register</title>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#btnRegister").click(function(){
+
+              $(this).attr("disabled", true);
+
+              var data = {
+                "username": $("#email").val(),
+                "password": $("#password").val()
+              };
+
+              $.ajax({
+                type: "POST",
+                url: "/auth/register",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                success: function(response) {
+
+                    $("#btnRegister").attr("disabled", false);
+
+                    if (response["successful"]) {
+                        showSuccessAlert(response["message"]);
+                    } else {
+                        showErrorAlert(response["message"]);
+                    }
+
+                    clearForm();
+                },
+                error: function(response) {
+
+                    showErrorAlert(response["responseText"]);
+                    $("#btnRegister").attr("disabled", false);
+                }
+              });
+            });
+
+        });
+
+        function clearForm() {
+            $("#email").val("");
+            $("#password").val("");
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div layout:fragment="content">
+
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input id="email" class="form-control" type="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password">
+            </div>
+            <button id="btnRegister" type="submit" class="btn btn-primary">Register</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

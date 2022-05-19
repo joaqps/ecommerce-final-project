@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public interface RateInPort {
+public interface RateService {
 
   Optional<Rate> findByProductIdBrandIdAndDate(String productId, String brandId, LocalDateTime date);
 

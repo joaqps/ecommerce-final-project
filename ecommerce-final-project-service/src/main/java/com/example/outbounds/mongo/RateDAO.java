@@ -33,7 +33,8 @@ public class RateDAO implements RateOutPort {
     return list.stream().max(Comparator.comparingInt(RateEntity::getPriority)).map(mapper::mapEntity);
   }
 
-  @Override public boolean exists(String id) {
+  @Override
+  public boolean exists(String id) {
     return repository.existsById(id);
   }
 

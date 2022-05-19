@@ -1,0 +1,13 @@
+[
+  {
+    "_class": "com.example.outbounds.mongo.entities.UserEntity",
+    "username": "johndoe@email.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "followedBrands": [
+      {
+      "id": "1"
+      }
+    ]
+  }
+ ]

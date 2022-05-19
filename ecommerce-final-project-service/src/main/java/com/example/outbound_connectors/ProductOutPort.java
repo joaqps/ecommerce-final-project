@@ -2,6 +2,8 @@ package com.example.outbound_connectors;
 
 import com.example.domain.domain.Product;
 
+import java.util.List;
+
 public interface ProductOutPort {
 
   Product save(Product entity);
@@ -11,4 +13,6 @@ public interface ProductOutPort {
   void delete(String id);
 
   boolean exists(String id);
+
+  List<Product> findAll();
 }

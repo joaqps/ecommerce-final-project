@@ -25,7 +25,7 @@ class ProductMessageServiceTest {
   @Mock
   ProductOutPort outPort;
   @InjectMocks
-  ProductMessageService service;
+  ProductMessageServiceImpl service;
 
   @Test
   void test_create_id() {

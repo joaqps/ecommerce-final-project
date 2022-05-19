@@ -2,7 +2,7 @@ package com.example.domain.services;
 
 import com.example.domain.domain.Rate;
 import com.example.domain.exceptions.RateNotFoundException;
-import com.example.domain_connectors.RateInPort;
+import com.example.domain_connectors.RateService;
 import com.example.outbound_connectors.RateOutPort;
 import com.example.outbounds.kafka.RateKafkaProducer;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class RateService implements RateInPort {
+public class RateServiceImpl implements RateService {
 
   private final RateOutPort outPort;
   private final RateKafkaProducer kafkaProducer;
@@ -28,7 +28,7 @@ public class RateService implements RateInPort {
   public String sendPriceChangeMessage(final String rateId, final BigDecimal price) {
 
     if (!outPort.exists(rateId)) {
-        throw new RateNotFoundException("Rate with specified id not found.");
+      throw new RateNotFoundException("Rate with specified id not found.");
     }
 
     return kafkaProducer.sendPriceChangeMessage(rateId, price);
@@ -36,6 +36,7 @@ public class RateService implements RateInPort {
 
   @Override
   public void updateRate(final Rate rate) {
+
     outPort.updateRate(rate);
   }
 }

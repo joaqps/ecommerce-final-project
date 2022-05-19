@@ -1,6 +1,6 @@
 package com.example.inbounds.kafka;
 
-import com.example.domain_connectors.RateInPort;
+import com.example.domain_connectors.RateService;
 import com.example.inbounds.kafka.dtos.PriceChangeKafkaDTO;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ import static org.mockito.Mockito.verify;
 class RateKafkaConsumerTest {
 
   @Mock
-  RateInPort inPort;
+  RateService inPort;
   @InjectMocks
   RateKafkaConsumer kafkaConsumer;
 

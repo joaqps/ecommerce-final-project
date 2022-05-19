@@ -1,7 +1,7 @@
 package com.example.inbounds.kafka;
 
 import com.example.domain.domain.Rate;
-import com.example.domain_connectors.RateInPort;
+import com.example.domain_connectors.RateService;
 import com.example.inbounds.kafka.dtos.PriceChangeKafkaDTO;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class RateKafkaConsumer {
 
-  private final RateInPort inPort;
+  private final RateService inPort;
 
   @KafkaListener(topics = "prices")
   public void onPriceChange(final ConsumerRecord<String, PriceChangeKafkaDTO> message) {

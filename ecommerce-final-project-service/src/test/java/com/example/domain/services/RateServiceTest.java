@@ -19,20 +19,26 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class) class RateServiceTest {
+@ExtendWith(MockitoExtension.class)
+class RateServiceTest {
 
-  @Mock RateOutPort outPort;
-  @Mock RateKafkaProducer kafkaProducer;
-  @InjectMocks RateService service;
+  @Mock
+  RateOutPort outPort;
+  @Mock
+  RateKafkaProducer kafkaProducer;
+  @InjectMocks
+  RateServiceImpl service;
 
-  @Test void test_find() {
+  @Test
+  void test_find() {
 
     service.findByProductIdBrandIdAndDate("1", "1", LocalDateTime.now());
 
     verify(outPort).findByProductIdBrandIdAndDate(any(), any(), any());
   }
 
-  @Test void test_price_change() {
+  @Test
+  void test_price_change() {
 
     when(outPort.exists(any())).thenReturn(true);
 
@@ -41,17 +47,18 @@ import static org.mockito.Mockito.when;
     verify(kafkaProducer).sendPriceChangeMessage(any(), any());
   }
 
-  @Test void test_price_change_not_found() {
+  @Test
+  void test_price_change_not_found() {
 
     when(outPort.exists(any())).thenReturn(false);
 
-    RuntimeException thrown = assertThrows(RateNotFoundException.class,
-        () -> service.sendPriceChangeMessage("1", BigDecimal.ONE));
+    RuntimeException thrown = assertThrows(RateNotFoundException.class, () -> service.sendPriceChangeMessage("1", BigDecimal.ONE));
 
     assertEquals("Rate with specified id not found.", thrown.getMessage());
   }
 
-  @Test void test_update() {
+  @Test
+  void test_update() {
 
     service.updateRate(new Rate());
 

@@ -1,7 +1,7 @@
 package com.example.inbounds.kafka;
 
 import com.example.domain.domain.Product;
-import com.example.domain_connectors.ProductInPort;
+import com.example.domain_connectors.ProductService;
 import com.example.domain_connectors.mappers.ProductKafkaConsumerMapper;
 import com.example.inbounds.kafka.dtos.ProductKafkaDTO;
 import lombok.RequiredArgsConstructor;
@@ -17,14 +17,14 @@ public class ProductKafkaConsumer {
 
   private final Logger logger = LoggerFactory.getLogger(ProductKafkaConsumer.class);
 
-  private final ProductInPort inPort;
+  private final ProductService inPort;
   private final ProductKafkaConsumerMapper mapper;
 
   @KafkaListener(topics = "product-create")
   public void onSave(final ConsumerRecord<String, ProductKafkaDTO> message) {
 
     Product vo = mapper.of(message.value());
-    inPort.save(vo);
+    inPort.saveAndNotify(vo);
   }
 
   @KafkaListener(topics = "product-update")
