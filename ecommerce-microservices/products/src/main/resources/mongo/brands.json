@@ -1,0 +1,87 @@
+[
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "id": "1",
+    "name": "ZARA"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "TETAK"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "ZOSIS"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "VORTEXACO"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "OZEAN"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "IDETICA"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "TELLIFLY"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "GEEKY"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "PLEXIA"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "DAYCORE"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "PLASMOS"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "BOINK"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "TROLLERY"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "PUSHCART"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "IMMUNICS"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "PROSELY"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "DIGIAL"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "CONCILITY"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "ZENTIME"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "ACCUSAGE"
+  },
+  {
+    "_class": "com.example.outbounds.mongo.entities.BrandEntity",
+    "name": "ACRODANCE"
+  }
+]

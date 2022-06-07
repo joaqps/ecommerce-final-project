@@ -1,2 +1,4 @@
 # Project exclude paths
 /ecommerce-final-project-apidoc/target/
+/ecommerce.iml
+/.idea/
