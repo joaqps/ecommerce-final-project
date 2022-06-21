@@ -15,6 +15,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface RatesCommandApi {
 
 	@RatesApi.RateCommand
-	ResponseEntity<SimpleResponseDto<RateResponseDTO>> updateRate(
-			@Parameter @RequestBody PriceChangeRequestDTO dto);
+	ResponseEntity<SimpleResponseDto<RateResponseDTO>> updateRate(@Parameter @RequestBody PriceChangeRequestDTO dto);
 }

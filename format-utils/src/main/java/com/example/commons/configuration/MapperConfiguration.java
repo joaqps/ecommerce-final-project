@@ -1,11 +1,10 @@
 package com.example.commons.configuration;
 
-import com.example.inbounds.rest.format.LocalDateTimeFormat;
+import com.example.commons.format.LocalDateTimeFormat;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.greyhawk.rest.server.conventions.api.inbounds.rest.dtos.formats.InstantDtoFormat;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -30,8 +29,8 @@ public class MapperConfiguration {
 		builder.serializers(new LocalDateTimeFormat.Serializer());
 		builder.deserializers(new LocalDateTimeFormat.Deserializer());
 
-		builder.serializers(new InstantDtoFormat.Serializer());
-		builder.deserializers(new InstantDtoFormat.Deserializer());
+//		builder.serializers(new InstantDtoFormat.Serializer());
+//		builder.deserializers(new InstantDtoFormat.Deserializer());
 
 		builder.modules(new JavaTimeModule());
 		builder.featuresToDisable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);

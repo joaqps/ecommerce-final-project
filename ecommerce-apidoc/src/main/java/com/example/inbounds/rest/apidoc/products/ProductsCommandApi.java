@@ -16,12 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface ProductsCommandApi {
 
 	@ProductsApi.ProductCommand
-	ResponseEntity<SimpleResponseDto<ProductResponseDTO>> save(
-			@Parameter @RequestBody ProductRequestDTO dto);
+	ResponseEntity<SimpleResponseDto<ProductResponseDTO>> save(@Parameter @RequestBody ProductRequestDTO dto);
 
 	@ProductsApi.ProductCommand
-	ResponseEntity<SimpleResponseDto<ProductResponseDTO>> update(
-			@Parameter @RequestBody ProductRequestDTO dto);
+	ResponseEntity<SimpleResponseDto<ProductResponseDTO>> update(@Parameter @RequestBody ProductRequestDTO dto);
 
 	@ProductsApi.ProductCommand
 	ResponseEntity<SimpleResponseDto<Void>> delete(@Parameter @PathVariable String id);

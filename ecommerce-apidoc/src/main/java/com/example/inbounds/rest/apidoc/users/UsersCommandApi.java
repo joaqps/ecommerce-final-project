@@ -15,6 +15,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface UsersCommandApi {
 
 	@UsersApi.UserCommand
-	ResponseEntity<SimpleResponseDto<UserResponseDTO>> register(
-			@Parameter @RequestBody UserRequestDTO dto);
+	ResponseEntity<SimpleResponseDto<UserResponseDTO>> register(@Parameter @RequestBody UserRequestDTO dto);
 }

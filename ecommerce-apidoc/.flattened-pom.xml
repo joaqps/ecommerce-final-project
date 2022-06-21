@@ -6,7 +6,7 @@
     <groupId>org.greyhawk.core.parents</groupId>
     <artifactId>greyhawk-core-spring-parent</artifactId>
     <version>1.5-SNAPSHOT</version>
-    <relativePath/>
+    <relativePath></relativePath>
   </parent>
   <groupId>com.example</groupId>
   <artifactId>ecommerce-apidoc</artifactId>

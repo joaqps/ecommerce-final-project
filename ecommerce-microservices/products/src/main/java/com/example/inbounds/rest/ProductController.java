@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.greyhawk.rest.server.conventions.api.inbounds.rest.apidoc.cmd.ApiDocDelete;
 import org.greyhawk.rest.server.conventions.api.inbounds.rest.apidoc.cmd.ApiDocInsert;
 import org.greyhawk.rest.server.conventions.api.inbounds.rest.apidoc.cmd.ApiDocUpdate;
-import org.greyhawk.rest.server.conventions.api.inbounds.rest.apidoc.query.ApiDocList;
 import org.greyhawk.rest.server.conventions.api.inbounds.rest.dtos.response.simple.SimpleResponseDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +25,12 @@ public class ProductController implements ProductsCommandApi {
 	private final ProductDTOMapper productMapper;
 
 	@GetMapping
-	public ResponseEntity<SimpleResponseDto<List<ProductResponseDTO>>> findAll() {
+	public ResponseEntity<List<ProductResponseDTO>> findAll() {
 
 		List<ProductResponseDTO> products = productService.findAll().stream().map(productMapper::mapResponse)
 				.collect(Collectors.toList());
 
-		return SimpleResponseDto.success(ApiDocList.Response.Success.SC, products);
+		return ResponseEntity.ok(products);
 	}
 
 	@PostMapping

@@ -9,7 +9,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>products</module>
-        <module>ui</module>
         <module>users</module>
     </modules>
 

@@ -6,7 +6,7 @@
     <groupId>org.greyhawk.core.parents</groupId>
     <artifactId>greyhawk-core-spring-parent</artifactId>
     <version>1.5-SNAPSHOT</version>
-    <relativePath/>
+    <relativePath></relativePath>
   </parent>
   <groupId>com.example</groupId>
   <artifactId>ecommerce-microservices</artifactId>
@@ -27,6 +27,7 @@
     <greyhawk.project-setup.group>com.example</greyhawk.project-setup.group>
     <maven.compiler.source>11</maven.compiler.source>
     <greyhawk.project-setup.artifact>greyhawk-sample-project-setup</greyhawk.project-setup.artifact>
+    <spring-cloud.version>2020.0.5</spring-cloud.version>
     <greyhawk.project-setup.version>1.0-SNAPSHOT</greyhawk.project-setup.version>
     <maven.compiler.target>11</maven.compiler.target>
     <greyhawk.package.root>com.example</greyhawk.package.root>
@@ -37,6 +38,13 @@
         <groupId>org.greyhawk.rest</groupId>
         <artifactId>greyhawk-rest-parent</artifactId>
         <version>0.1.1-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -118,6 +126,14 @@
       <artifactId>format-utils</artifactId>
       <version>0.0.1-SNAPSHOT</version>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
   </dependencies>
   <repositories>
